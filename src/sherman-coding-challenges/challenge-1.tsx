@@ -10,7 +10,6 @@ const things: any = {
 };
 
 export const Challenge1 = () => {
-
     return (
         <>
             <div>Challenge One</div>

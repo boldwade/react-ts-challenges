@@ -18,8 +18,10 @@ export const AppRoutes = () => {
                 <Route path="home" element={<Home />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<ContactUs />} />
-                <Route path="challenge-1" element={<Challenge1 />} />
-                <Route path="challenge-2" element={<Challenge2 />} />
+                <Route path="challenge">
+                    <Route path="1" element={<Challenge1 />} />
+                    <Route path="2" element={<Challenge2 />} />
+                </Route>
                 <Route path="*" element={<p>There's nothing here: 404!</p>} />
             </Route>
         </Routes>
@@ -27,7 +29,7 @@ export const AppRoutes = () => {
 }
 
 const renderChallengeMenuItem = (_: unknown, index: number) =>
-    <NavDropdown.Item key={index} as={NavLink} to={`challenge-${index + 1}`}>Challenge {index + 1}</NavDropdown.Item>;
+    <NavDropdown.Item key={index} as={NavLink} to={`challenge/${index + 1}`}>Challenge {index + 1}</NavDropdown.Item>;
 
 const Layout = () => {
     return (

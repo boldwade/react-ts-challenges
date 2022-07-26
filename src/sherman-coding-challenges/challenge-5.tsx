@@ -37,13 +37,13 @@ export const Challenge5 = () => {
     }, [setRandomPersonStatus, userState]);
 
     return (
-        <div className={'d-flex flex-column align-items-center'}>
+        <>
             <h3>Challenge 5</h3>
             <hr />
             <UserContext.Provider value={{ userState, setUserState }}>
                 <PersonStatus />
             </UserContext.Provider>
-        </div>
+        </>
     );
 };
 

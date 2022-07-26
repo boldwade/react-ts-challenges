@@ -10,9 +10,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { Challenge2 } from "./sherman-coding-challenges/challenge-2";
 import { Challenge3 } from "./sherman-coding-challenges/challenge-3";
-import { Challenge } from "./sherman-coding-challenges/challenge-template";
 import { Challenge4 } from "./sherman-coding-challenges/challenge-4";
 import { Challenge5 } from "./sherman-coding-challenges/challenge-5";
+import { Challenge6 } from "./sherman-coding-challenges/challenge-6";
+import { ChallengeLayout } from "./sherman-coding-challenges/challenge-layout";
 
 export const AppRoutes = () => {
     return (
@@ -22,12 +23,13 @@ export const AppRoutes = () => {
                 <Route path="home" element={<Home />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<ContactUs />} />
-                <Route path="challenge">
+                <Route path="challenge" element={<ChallengeLayout />}>
                     <Route path="1" element={<Challenge1 />} />
                     <Route path="2" element={<Challenge2 />} />
                     <Route path="3" element={<Challenge3 />} />
                     <Route path="4" element={<Challenge4 />} />
                     <Route path="5" element={<Challenge5 />} />
+                    <Route path="6" element={<Challenge6 />} />
                 </Route>
                 <Route path="*" element={<p>There's nothing here: 404!</p>} />
             </Route>
@@ -42,7 +44,7 @@ const Layout = () => {
     return (
         <>
             <h1>Test Project</h1>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="sm">
                 <Container fluid>
                     <Navbar.Brand href="#">Navbar</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

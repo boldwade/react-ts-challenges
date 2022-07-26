@@ -25,12 +25,12 @@ export const Challenge3 = () => {
     const renderActivities = () => <ul>{activities.map(x => <ExpandableListItem key={x.activity} activity={x} />)}</ul>;
 
     return (
-        <div className={'d-flex flex-column align-items-center'}>
+        <>
             <div>Challenge 3 - List of activities</div>
             <Button onClick={onFetchActivity}>Generate Activity</Button>
             <hr />
             {renderActivities()}
-        </div>
+        </>
     );
 };
 

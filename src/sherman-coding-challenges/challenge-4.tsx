@@ -19,7 +19,10 @@ export const Challenge4 = () => {
         }, 1000);
     };
 
-    useEffect(() => addLadder(), []);
+    useEffect(() => {
+        addLadder()
+        return () => window.clearTimeout(timerRef.current);
+    }, []);
 
     const renderLadderImage = (_: any, index: number) =>
         <LadderImage key={index}
@@ -29,11 +32,11 @@ export const Challenge4 = () => {
         />;
 
     return (
-        <div className={'d-flex flex-column align-items-center'}>
+        <>
             <div>Challenge 4 - Ladder</div>
             <hr />
             {Array.from({ length: ladderLength }).map(renderLadderImage)}
-        </div>
+        </>
     );
 };
 

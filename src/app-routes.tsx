@@ -12,6 +12,7 @@ import { Challenge2 } from "./sherman-coding-challenges/challenge-2";
 import { Challenge3 } from "./sherman-coding-challenges/challenge-3";
 import { Challenge } from "./sherman-coding-challenges/challenge-template";
 import { Challenge4 } from "./sherman-coding-challenges/challenge-4";
+import { Challenge5 } from "./sherman-coding-challenges/challenge-5";
 
 export const AppRoutes = () => {
     return (
@@ -26,6 +27,7 @@ export const AppRoutes = () => {
                     <Route path="2" element={<Challenge2 />} />
                     <Route path="3" element={<Challenge3 />} />
                     <Route path="4" element={<Challenge4 />} />
+                    <Route path="5" element={<Challenge5 />} />
                 </Route>
                 <Route path="*" element={<p>There's nothing here: 404!</p>} />
             </Route>

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Image } from "react-bootstrap";
-import './challenge-4.scss';
 import { useStateRef } from "../hooks/useStateRef";
 
 const LADDER_IMAGE =
@@ -15,14 +14,12 @@ export const Challenge4 = () => {
         window.clearTimeout(timerRef.current);
         timerRef.current = window.setTimeout(() => {
             setLadderLength(prevState => prevState += 1);
-            if (ladderLengthRef.current < 5) return addLadder()
+            if (ladderLengthRef.current < 5) return addLadder();
             window.clearTimeout(timerRef.current);
         }, 1000);
-    }
+    };
 
-    useEffect(() => {
-        addLadder();
-    }, []);
+    useEffect(() => addLadder(), []);
 
     const renderLadderImage = (_: any, index: number) =>
         <LadderImage key={index}

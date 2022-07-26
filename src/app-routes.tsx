@@ -9,6 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { Challenge2 } from "./sherman-coding-challenges/challenge-2";
+import { Challenge3 } from "./sherman-coding-challenges/challenge-3";
 
 export const AppRoutes = () => {
     return (
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
                 <Route path="challenge">
                     <Route path="1" element={<Challenge1 />} />
                     <Route path="2" element={<Challenge2 />} />
+                    <Route path="3" element={<Challenge3 />} />
                 </Route>
                 <Route path="*" element={<p>There's nothing here: 404!</p>} />
             </Route>

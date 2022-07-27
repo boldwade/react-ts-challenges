@@ -10,33 +10,44 @@ import Nav from "react-bootstrap/Nav";
 import { ChallengeLayout } from "./sherman-coding-challenges/challenge-layout";
 
 import { Challenge1 } from "./sherman-coding-challenges/challenge-1";
+
 const Challenge2 = lazy(() => import('./sherman-coding-challenges/challenge-2'));
 const Challenge3 = lazy(() => import('./sherman-coding-challenges/challenge-3'));
 const Challenge4 = lazy(() => import('./sherman-coding-challenges/challenge-4'));
 const Challenge5 = lazy(() => import('./sherman-coding-challenges/challenge-5'));
 const Challenge6 = lazy(() => import('./sherman-coding-challenges/challenge-6'));
-
-const SuspenseElement = ({ children }: { children: JSX.Element }) => <React.Suspense fallback={<>Loading...</>}>{children}</React.Suspense>;
+const Challenge7 = lazy(() => import('./sherman-coding-challenges/challenge-7'));
+// const Challenge8 = lazy(() => import('./sherman-coding-challenges/challenge-8'));
+// const Challenge9 = lazy(() => import('./sherman-coding-challenges/challenge-9'));
+// const Challenge10 = lazy(() => import('./sherman-coding-challenges/challenge-10'));
+// const Challenge11 = lazy(() => import('./sherman-coding-challenges/challenge-11'));
+// const Challenge12 = lazy(() => import('./sherman-coding-challenges/challenge-12'));
+// const Challenge13 = lazy(() => import('./sherman-coding-challenges/challenge-13'));
+// const Challenge14 = lazy(() => import('./sherman-coding-challenges/challenge-14'));
+// const Challenge15 = lazy(() => import('./sherman-coding-challenges/challenge-15'));
 
 export const AppRoutes = () => {
     return (
-        <Routes>
-            <Route element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="home" element={<Home />} />
-                <Route path="about" element={<About />} />
-                <Route path="contact" element={<ContactUs />} />
-                <Route path="challenge" element={<ChallengeLayout />}>
-                    <Route path="1" element={<Challenge1 />} />
-                    <Route path="2" element={<SuspenseElement><Challenge2 /></SuspenseElement>} />
-                    <Route path="3" element={<SuspenseElement><Challenge3 /></SuspenseElement>} />
-                    <Route path="4" element={<SuspenseElement><Challenge4 /></SuspenseElement>} />
-                    <Route path="5" element={<SuspenseElement><Challenge5 /></SuspenseElement>} />
-                    <Route path="6" element={<SuspenseElement><Challenge6 /></SuspenseElement>} />
+        <React.Suspense fallback={<>Loading...</>}>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="home" element={<Home />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="contact" element={<ContactUs />} />
+                    <Route path="challenge" element={<ChallengeLayout />}>
+                        <Route path="1" element={<Challenge1 />} />
+                        <Route path="2" element={<Challenge2 />} />
+                        <Route path="3" element={<Challenge3 />} />
+                        <Route path="4" element={<Challenge4 />} />
+                        <Route path="5" element={<Challenge5 />} />
+                        <Route path="6" element={<Challenge6 />} />
+                        <Route path="7" element={<Challenge7 />} />
+                    </Route>
+                    <Route path="*" element={<p>There's nothing here: 404!</p>} />
                 </Route>
-                <Route path="*" element={<p>There's nothing here: 404!</p>} />
-            </Route>
-        </Routes>
+            </Routes>
+        </React.Suspense>
     );
 };
 

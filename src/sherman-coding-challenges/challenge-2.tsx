@@ -55,4 +55,4 @@ export const Challenge2 = () => {
     );
 };
 
-
+export default Challenge2;

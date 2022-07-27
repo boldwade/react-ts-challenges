@@ -100,3 +100,5 @@ const DisplaySubtasks = (
         </>
     );
 };
+
+export default Challenge6;

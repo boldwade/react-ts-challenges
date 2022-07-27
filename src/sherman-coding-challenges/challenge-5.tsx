@@ -65,4 +65,4 @@ const PersonStatus = () => {
     );
 };
 
-
+export default Challenge5;

@@ -52,3 +52,5 @@ const LadderImage = ({ index, isExpanded, onMouseOver }: LadderImageProps) => {
     return <Image src={LADDER_IMAGE} key={index} style={{ width: isExpanded ? 200 : 100 }}
                   onMouseOver={handleOnMouseOver} onMouseOut={handleOnMouseOut} />;
 };
+
+export default Challenge4;

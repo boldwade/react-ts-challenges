@@ -2,18 +2,21 @@ import { NavLink, Outlet, Route, Routes } from "react-router-dom";
 import { Home } from "./home";
 import { About } from "./About";
 import { ContactUs } from "./contact-us";
-import { Challenge1 } from "./sherman-coding-challenges/challenge-1";
-import React from "react";
+import React, { lazy } from "react";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { Challenge2 } from "./sherman-coding-challenges/challenge-2";
-import { Challenge3 } from "./sherman-coding-challenges/challenge-3";
-import { Challenge4 } from "./sherman-coding-challenges/challenge-4";
-import { Challenge5 } from "./sherman-coding-challenges/challenge-5";
-import { Challenge6 } from "./sherman-coding-challenges/challenge-6";
 import { ChallengeLayout } from "./sherman-coding-challenges/challenge-layout";
+
+import { Challenge1 } from "./sherman-coding-challenges/challenge-1";
+const Challenge2 = lazy(() => import('./sherman-coding-challenges/challenge-2'));
+const Challenge3 = lazy(() => import('./sherman-coding-challenges/challenge-3'));
+const Challenge4 = lazy(() => import('./sherman-coding-challenges/challenge-4'));
+const Challenge5 = lazy(() => import('./sherman-coding-challenges/challenge-5'));
+const Challenge6 = lazy(() => import('./sherman-coding-challenges/challenge-6'));
+
+const SuspenseElement = ({ children }: { children: JSX.Element }) => <React.Suspense fallback={<>Loading...</>}>{children}</React.Suspense>;
 
 export const AppRoutes = () => {
     return (
@@ -25,17 +28,17 @@ export const AppRoutes = () => {
                 <Route path="contact" element={<ContactUs />} />
                 <Route path="challenge" element={<ChallengeLayout />}>
                     <Route path="1" element={<Challenge1 />} />
-                    <Route path="2" element={<Challenge2 />} />
-                    <Route path="3" element={<Challenge3 />} />
-                    <Route path="4" element={<Challenge4 />} />
-                    <Route path="5" element={<Challenge5 />} />
-                    <Route path="6" element={<Challenge6 />} />
+                    <Route path="2" element={<SuspenseElement><Challenge2 /></SuspenseElement>} />
+                    <Route path="3" element={<SuspenseElement><Challenge3 /></SuspenseElement>} />
+                    <Route path="4" element={<SuspenseElement><Challenge4 /></SuspenseElement>} />
+                    <Route path="5" element={<SuspenseElement><Challenge5 /></SuspenseElement>} />
+                    <Route path="6" element={<SuspenseElement><Challenge6 /></SuspenseElement>} />
                 </Route>
                 <Route path="*" element={<p>There's nothing here: 404!</p>} />
             </Route>
         </Routes>
-    )
-}
+    );
+};
 
 const renderChallengeMenuItem = (_: unknown, index: number) =>
     <NavDropdown.Item key={index} as={NavLink} to={`challenge/${index + 1}`}>Challenge {index + 1}</NavDropdown.Item>;
@@ -50,12 +53,12 @@ const Layout = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-0">
-                            <Nav.Link as={NavLink} to='/home'>Home</Nav.Link>
-                            <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
+                            <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
+                            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                             <NavDropdown title="Sherman Challenges" id="basic-nav-dropdown">
                                 {Array.from({ length: 9 }).map(renderChallengeMenuItem)}
                             </NavDropdown>
-                            <Nav.Link as={NavLink} to='/contact'>Contact Us</Nav.Link>
+                            <Nav.Link as={NavLink} to="/contact">Contact Us</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

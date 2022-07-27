@@ -61,4 +61,4 @@ const ExpandableListItem = ({ activity }: { activity: BoredApi }) => {
     );
 };
 
-
+export default Challenge3;

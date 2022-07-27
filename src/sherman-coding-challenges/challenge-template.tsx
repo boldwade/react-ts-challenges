@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Challenge = () => {
+export const ChallengeTemplate = () => {
     return (
         <>
             <h4>Challenge  - </h4>

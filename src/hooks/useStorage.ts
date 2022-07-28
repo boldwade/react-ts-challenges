@@ -26,13 +26,17 @@ function useStorage<T>({ key, defaultValue }: useStorageProps<T>, storageObject:
     });
 
     useEffect(() => {
+        console.log('useStorage:useEffect', key, value);
         if (value === undefined) return storageObject.removeItem(key);
         storageObject.setItem(key, JSON.stringify(value));
     }, [key, value, storageObject]);
 
-    const remove = useCallback(() => {
-        setValue(undefined);
-    }, []);
+    const clear = useCallback(() => setValue(undefined), []);
 
-    return [value, setValue, remove];
+    // return [value, setValue, clear];
+    return {
+        value,
+        setValue,
+        clear,
+    }
 }

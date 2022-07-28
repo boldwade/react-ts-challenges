@@ -3,7 +3,7 @@ import { useLocalStorage } from "./useStorage";
 import useMediaQuery from "./useMediaQuery";
 
 export default function useDarkMode() {
-    const [darkMode, setDarkMode] = useLocalStorage<boolean>({ key: "useDarkMode" });
+    const { value: darkMode, setValue: setDarkMode } = useLocalStorage<boolean>({ key: "useDarkMode" });
     const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
     const enabled: boolean = (darkMode as boolean) ?? prefersDarkMode;
 

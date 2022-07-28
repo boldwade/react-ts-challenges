@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import React, { useId, useState } from "react";
+import React, { useId } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import './contact-us.scss';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -55,9 +55,7 @@ export const ContactUs = () => {
                 <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                 </Form.Text>
-                <Form.Control.Feedback type="invalid">
-                    Email is required.
-                </Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Email is required.</Form.Control.Feedback>
                 <br />
                 {!!errors.email && "Email is required"}
             </Form.Group>

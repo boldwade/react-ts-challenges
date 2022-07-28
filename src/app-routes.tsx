@@ -18,7 +18,7 @@ const Challenge6 = lazy(() => import('./sherman-coding-challenges/challenge-6'))
 const Challenge7 = lazy(() => import('./sherman-coding-challenges/challenge-7'));
 const Challenge8 = lazy(() => import('./sherman-coding-challenges/challenge-8'));
 const Challenge9 = lazy(() => import('./sherman-coding-challenges/challenge-9'));
-// const Challenge10 = lazy(() => import('./sherman-coding-challenges/challenge-10'));
+const Challenge10 = lazy(() => import('./sherman-coding-challenges/challenge-10'));
 // const Challenge11 = lazy(() => import('./sherman-coding-challenges/challenge-11'));
 // const Challenge12 = lazy(() => import('./sherman-coding-challenges/challenge-12'));
 // const Challenge13 = lazy(() => import('./sherman-coding-challenges/challenge-13'));
@@ -44,6 +44,7 @@ export const AppRoutes = () => {
                         <Route path="7" element={<Challenge7 />} />
                         <Route path="8" element={<Challenge8 />} />
                         <Route path="9" element={<Challenge9 />} />
+                        <Route path="10" element={<Challenge10 />} />
                     </Route>
                     <Route path="*" element={<p>There's nothing here: 404!</p>} />
                 </Route>
@@ -68,7 +69,7 @@ const Layout = () => {
                             <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
                             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                             <NavDropdown title="Sherman Challenges" id="basic-nav-dropdown">
-                                {Array.from({ length: 9 }).map(renderChallengeMenuItem)}
+                                {Array.from({ length: 24 }).map(renderChallengeMenuItem)}
                             </NavDropdown>
                             <Nav.Link as={NavLink} to="/contact">Contact Us</Nav.Link>
                         </Nav>

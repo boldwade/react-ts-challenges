@@ -7,10 +7,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Spinner from "react-bootstrap/Spinner";
 import { ChallengeLayout } from "./sherman-coding-challenges/challenge-layout";
-
 import { Challenge1 } from "./sherman-coding-challenges/challenge-1";
-
 const Challenge2 = lazy(() => import('./sherman-coding-challenges/challenge-2'));
 const Challenge3 = lazy(() => import('./sherman-coding-challenges/challenge-3'));
 const Challenge4 = lazy(() => import('./sherman-coding-challenges/challenge-4'));
@@ -18,7 +17,7 @@ const Challenge5 = lazy(() => import('./sherman-coding-challenges/challenge-5'))
 const Challenge6 = lazy(() => import('./sherman-coding-challenges/challenge-6'));
 const Challenge7 = lazy(() => import('./sherman-coding-challenges/challenge-7'));
 const Challenge8 = lazy(() => import('./sherman-coding-challenges/challenge-8'));
-// const Challenge9 = lazy(() => import('./sherman-coding-challenges/challenge-9'));
+const Challenge9 = lazy(() => import('./sherman-coding-challenges/challenge-9'));
 // const Challenge10 = lazy(() => import('./sherman-coding-challenges/challenge-10'));
 // const Challenge11 = lazy(() => import('./sherman-coding-challenges/challenge-11'));
 // const Challenge12 = lazy(() => import('./sherman-coding-challenges/challenge-12'));
@@ -28,7 +27,7 @@ const Challenge8 = lazy(() => import('./sherman-coding-challenges/challenge-8'))
 
 export const AppRoutes = () => {
     return (
-        <React.Suspense fallback={<>Loading...</>}>
+        <React.Suspense fallback={<Spinner animation="border" />}>
             <Routes>
                 <Route element={<Layout />}>
                     <Route index element={<Home />} />
@@ -44,6 +43,7 @@ export const AppRoutes = () => {
                         <Route path="6" element={<Challenge6 />} />
                         <Route path="7" element={<Challenge7 />} />
                         <Route path="8" element={<Challenge8 />} />
+                        <Route path="9" element={<Challenge9 />} />
                     </Route>
                     <Route path="*" element={<p>There's nothing here: 404!</p>} />
                 </Route>

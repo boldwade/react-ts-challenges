@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ChallengeTemplate = () => {
+export const Challenge = () => {
     return (
         <>
             <h4>Challenge  - </h4>
@@ -8,3 +8,4 @@ export const ChallengeTemplate = () => {
         </>
     );
 };
+export default Challenge;

@@ -20,7 +20,7 @@ const Challenge8 = lazy(() => import('./sherman-coding-challenges/challenge-8'))
 const Challenge9 = lazy(() => import('./sherman-coding-challenges/challenge-9'));
 const Challenge10 = lazy(() => import('./sherman-coding-challenges/challenge-10'));
 const Challenge11 = lazy(() => import('./sherman-coding-challenges/challenge-11'));
-// const Challenge12 = lazy(() => import('./sherman-coding-challenges/challenge-12'));
+const Challenge12 = lazy(() => import('./sherman-coding-challenges/challenge-12'));
 // const Challenge13 = lazy(() => import('./sherman-coding-challenges/challenge-13'));
 // const Challenge14 = lazy(() => import('./sherman-coding-challenges/challenge-14'));
 // const Challenge15 = lazy(() => import('./sherman-coding-challenges/challenge-15'));
@@ -46,6 +46,7 @@ export const AppRoutes = () => {
                         <Route path="9" element={<Challenge9 />} />
                         <Route path="10" element={<Challenge10 />} />
                         <Route path="11" element={<Challenge11 />} />
+                        <Route path="12" element={<Challenge12 />} />
                     </Route>
                     <Route path="*" element={<p>There's nothing here: 404!</p>} />
                 </Route>

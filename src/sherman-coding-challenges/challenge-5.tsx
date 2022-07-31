@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import './challenge-5.scss';
+import { randomNumber } from "./random-number";
 
 type UserState = { [key: string]: boolean };
 
@@ -9,10 +10,6 @@ interface StateContext {
 }
 
 const UserContext = createContext<StateContext | undefined>(undefined);
-
-function randomNumber(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min) + min);
-}
 
 export const Challenge5 = () => {
     const [userState, setUserState] = useState<UserState>({
